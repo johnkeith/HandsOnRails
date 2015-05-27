@@ -2,6 +2,7 @@ class DiscussionPostsController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
+		@all_discussion_posts = DiscussionPost.all
 	end
 
 	def show
