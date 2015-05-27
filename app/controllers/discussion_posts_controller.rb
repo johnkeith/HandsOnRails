@@ -2,7 +2,7 @@ class DiscussionPostsController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-		@all_discussion_posts = DiscussionPost.includes(:user).all
+		@all_discussion_posts = DiscussionPost.includes(:user).all.order(created_at: :desc)
 	end
 
 	def show

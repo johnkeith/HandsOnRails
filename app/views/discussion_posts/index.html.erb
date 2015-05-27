@@ -3,7 +3,12 @@
 <% unless @all_discussion_posts.empty? %>
 	<ul class="discussion-posts-list">
 	<% @all_discussion_posts.each do |post| %>
-		<li><strong><%= post.user.first_name + " " + post.user.last_name %></strong>: <%= post.content %></li>
+		<li>
+			<strong><%= post.user.first_name + " " + post.user.last_name %></strong>: <%= post.content %>
+			<br />
+			<small>- <%= post.created_at.localtime.strftime("%I:%M %p %m/%d") %></small>
+		</li>
+
 	<% end %>
 	</ul>
 <% end %>
