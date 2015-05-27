@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+.discussion-posts-list {
+	list-style: none; 
+	li {
+		padding: 10px;
+	}
+}

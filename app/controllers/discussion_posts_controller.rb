@@ -11,10 +11,9 @@ class DiscussionPostsController < ApplicationController
 	def create # save to db
 		@post = DiscussionPost.new(discussion_post_params)
 		@post.user_id = current_user.id
+		@post.save
 
-		if @post.save
-			redirect_to action: 'index'
-		end
+		redirect_to action: 'index'
 	end
 
 	def new
