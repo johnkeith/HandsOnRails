@@ -1,6 +1,10 @@
 <h1>Our Discussion Page</h1>
+<%= link_to 'Add New Post!', new_discussion_post_path %>
+<hr />
 <% unless @all_discussion_posts.empty? %>
-	<%= @all_discussion_posts.each do |post| %>
-		<%= post %>
+	<ul>
+	<% @all_discussion_posts.each do |post| %>
+		<li><strong><%= post.user.first_name + " " + post.user.last_name %></strong>: <%= post.content %></li>
 	<% end %>
+	</ul>
 <% end %>
